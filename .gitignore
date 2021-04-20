@@ -3,7 +3,6 @@
 *.class
 *.log
 build.sbt_back
-dist/*
 target/
 lib_managed/
 src_managed/
@@ -23,7 +22,7 @@ env/
 bin/
 build/*.jar
 develop-eggs/
-dist/
+build/postgresql/dist/
 eggs/
 lib/
 lib64/
@@ -43,8 +42,9 @@ nosetests.xml
 coverage.xml
 *.mo
 .project
+.csv
 .pydevproject
 docs/_build/
-build/
 \#*\#
 \.\#*
+volumes/pgdata

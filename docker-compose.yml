@@ -4,6 +4,8 @@ services:
   dwhexample-postgresql:
     build: build/postgresql
     image: dwhexample/postgresql
+    environment:
+      POSTGRES_PASSWORD: example
     volumes:
       - "./volumes/pgdata:/var/lib/postgresql/data"
       - "./volumes/data:/opt/data"

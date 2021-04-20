@@ -18,7 +18,7 @@ pg() {
         --rm \
         -v ${DIR}:${PROJECT_DIR} \
         -w ${work_dir} \
-        -e POSTGRES_HOST_AUTH_METHOD=trust \
+        -e POSTGRES_PASSWORD=example \
         --network dwhexample \
         dwhexample/postgresql \
         "$@"

@@ -1,9 +1,9 @@
 CREATE TABLE crimes_staging
 (
-    incident_number    VARCHAR(10),
-    offense_code       VARCHAR(5),
+    incident_number    VARCHAR(15),
+    offense_code       VARCHAR(10),
     offense_code_group VARCHAR(50),
-    offense_desciption VARCHAR(50),
+    offense_desciption VARCHAR(100),
     district           VARCHAR(3),
     reporting_area     VARCHAR(50),
     shooting           VARCHAR(50), --convert to bool
@@ -16,15 +16,13 @@ CREATE TABLE crimes_staging
     street             VARCHAR(50),
     lat                VARCHAR(50),
     lng                VARCHAR(50),
-    location           VARCHAR(50),
-    PRIMARY KEY (incident_number)
+    location           VARCHAR(50)
 );
 
 CREATE TABLE offense_codes_staging
 (
-    code         VARCHAR(10),
-    offense_code VARCHAR(5),
-    PRIMARY KEY (code)
+    offense_code VARCHAR(10),
+    offense_name VARCHAR(100)
 );
 
 COPY crimes_staging (
@@ -46,14 +44,14 @@ COPY crimes_staging (
                      lng,
                      location
     )
-    FROM '/home/alexander/go/src/awesomeProject/dist/crime.csv'
+    FROM '/dist/crime.csv'
     DELIMITER ','
     CSV HEADER;
 
 COPY offense_codes_staging (
-                            code,
-                            offense_code
+                            offense_code,
+                            offense_name
     )
-    FROM '/home/alexander/go/src/awesomeProject/dist/offense_codes.csv'
+    FROM '/dist/offense_codes.csv'
     DELIMITER ','
     CSV HEADER;
