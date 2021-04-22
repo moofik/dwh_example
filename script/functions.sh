@@ -1,3 +1,5 @@
+#!/bin/bash
+
 pg() {
   local base_dir=$(dirname ${DIR})
   local work_dir=$(pwd | sed "s:${base_dir}:${PROJECT_DIR}:")
