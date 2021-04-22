@@ -1,0 +1,76 @@
+version: 2
+
+models:
+  - name: stg_crimes
+    description: Contains crime information
+
+    columns:
+      - name: incident_number
+        description: This is a unique identifier of a crime incident
+        tests:
+          - unique
+          - not_null
+
+      - name: offense_code
+        description: Offense code of a crime
+
+      - name: offense_code_group
+        description: Offense code group
+
+      - name: offense_description
+        description: Offense description
+
+      - name: district
+        description: District of a crime happened
+
+      - name: reporting_area
+        description: Reporting area of crime
+
+      - name: was_shooting
+        description: Reporting area of crime
+
+      - name: occured_on_date
+        description: Reporting area of crime
+
+      - name: year
+        description: Reporting area of crime
+
+      - name: month
+        description: Reporting area of crime
+
+      - name: day_of_week
+        description: Reporting area of crime
+
+      - name: hour
+        description: Reporting area of crime
+
+      - name: ucr_part
+        description: Reporting area of crime
+
+      - name: street
+        description: Reporting area of crime
+
+      - name: lat
+        description: Reporting area of crime
+
+      - name: lng
+        description: Reporting area of crime
+
+      - name: location
+        description: Reporting area of crime
+
+  # next table
+  - name: stg_offense_codes
+    description: Contains offense code information
+
+    columns:
+      - name: code
+        tests:
+          - unique
+          - not_null
+        description: This is an unique offensecode
+
+      - name: name
+        tests:
+          - not_null
+        description: This is an offense name

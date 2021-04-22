@@ -17,6 +17,19 @@ services:
     networks:
       - dwhexample
 
+  dwhexample-dbt:
+    build: build/dbt
+    image: dwhexample/dbt
+    environment:
+      DBT_PROFILES_DIR: /dbt/config
+    volumes:
+      - "./src:/dbt"
+      - "./src/config:/dbt/config"
+    ports:
+      - "127.0.0.1:8080:8080"
+    networks:
+      - dwhexample
+
 networks:
   dwhexample:
     external: true

@@ -1,0 +1,12 @@
+jaffle_shop:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: dwhexample-postgresql
+      user: dwhexample
+      password: example
+      port: 5432
+      dbname: dwhexample
+      schema: public
+      threads: 1
