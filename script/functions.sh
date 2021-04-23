@@ -32,7 +32,8 @@ dbt() {
     --rm \
     -v ${DIR}:${PROJECT_DIR} \
     -w ${work_dir} \
-    -e DBT_PROFILES_DIR=/src/config \
+    -e DBT_PROFILES_DIR=${work_dir} \
+    -e DBT_PROJECT_DIR=${work_dir} \
     --network dwhexample \
     dwhexample/dbt \
     "$@"

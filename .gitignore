@@ -42,9 +42,9 @@ nosetests.xml
 coverage.xml
 *.mo
 .project
-.csv
 .pydevproject
 docs/_build/
 \#*\#
 \.\#*
 volumes/pgdata
+.user.yml

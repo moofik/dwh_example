@@ -1,0 +1,12 @@
+crimes:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: dwhexample-postgresql
+      user: dwhexample
+      password: dwhexample
+      port: 5432
+      dbname: dwhexample
+      schema: public
+      threads: 1

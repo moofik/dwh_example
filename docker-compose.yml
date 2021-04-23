@@ -22,6 +22,7 @@ services:
     image: dwhexample/dbt
     environment:
       DBT_PROFILES_DIR: /dbt/config
+      DBT_PROJECT_DIR: /dbt
     volumes:
       - "./src:/dbt"
       - "./src/config:/dbt/config"
