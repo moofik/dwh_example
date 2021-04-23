@@ -1,0 +1,27 @@
+
+version: 2
+
+models:
+  - name: mart_most_frequent_by_year_month
+    description: Rating of crimes frequency ordered by year and month
+    tests:
+      - unique:
+          column_name: "(year || '-' || month || '-' || name)"
+
+  - name: mart_most_frequent_crimes_by_districts
+    description: Rating of crimes frequency ordered by districts
+    tests:
+      - unique:
+          column_name: "(district || '-' || name)"
+
+  - name: mart_most_criminal_districts
+    description: Rating of most criminal districts (which have most count of crimes happened)
+    tests:
+      - unique:
+          column_name: district
+
+  - name: mart_most_criminal_districts_and_streets
+    description: Rating of most criminal districts and streets (which have most count of crimes happened)
+    tests:
+      - unique:
+          column_name: "(district || '-' || street)"

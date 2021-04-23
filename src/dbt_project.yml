@@ -17,5 +17,9 @@ models:
   crimes:
     materialized: table
     staging:
-      materialized: view
+      materialized: table
       tags: [ "staging", "hourly" ]
+    marts:
+      materialized: table
+      tags: [ "marts", "hourly" ]
+
