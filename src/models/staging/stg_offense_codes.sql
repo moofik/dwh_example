@@ -3,11 +3,11 @@ with source as (
     from {{ ref('raw_offense_codes') }}
 ),
 
-     transformed as (
-         select code   as code,
-                "name" as "name"
-         from source
-     )
+ transformed as (
+     select distinct code,
+            "name"
+     from source
+ )
 
 select *
 from transformed

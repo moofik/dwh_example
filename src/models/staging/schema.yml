@@ -26,10 +26,10 @@ models:
       - name: reporting_area
         description: Reporting area of crime
 
-      - name: was_shooting
+      - name: shooting
         description: Reporting area of crime
 
-      - name: occured_on_date
+      - name: occurred_on_date
         description: Reporting area of crime
 
       - name: year
@@ -53,7 +53,7 @@ models:
       - name: lat
         description: Reporting area of crime
 
-      - name: lng
+      - name: long
         description: Reporting area of crime
 
       - name: location
@@ -68,7 +68,7 @@ models:
         tests:
           - unique
           - not_null
-        description: This is an unique offensecode
+        description: This is an unique offense code
 
       - name: name
         tests:
