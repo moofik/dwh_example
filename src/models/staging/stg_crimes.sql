@@ -1,10 +1,13 @@
 with source as (
-    select *
+    select *,
+        row_number() over (
+            partition by incident_number order by (select 1)
+        ) rn_incident_number --для исключения дублей
     from {{ ref('raw_crimes') }}
 ),
 
 transformed as (
-    select distinct incident_number,
+    select incident_number,
         offense_code,
         offense_code_group,
         offense_description,
@@ -33,6 +36,7 @@ transformed as (
         long::decimal(10, 8) as long,
         location
     from source
+    where rn_incident_number = 1 --исключение дублей
 )
 
 select *
